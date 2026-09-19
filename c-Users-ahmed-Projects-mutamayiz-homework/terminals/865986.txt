@@ -1,0 +1,45 @@
+---
+pid: 20260
+cwd: "C:\\Users\\ahmed\\Projects\\mutamayiz-homework"
+command: "$env:Path = [System.Environment]::GetEnvironmentVariable(\"Path\",\"Machine\") + \";\" + [System.Environment]::GetEnvironmentVariable(\"Path\",\"User\"); Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; Start-Sleep -Seconds 1; cd \"C:\\Users\\ahmed\\Projects\\mutamayiz-homework\"; node server.js"
+started_at: 2026-09-19T07:04:33.190Z
+running_for_ms: 320498   
+---
+المنصة تعمل على http://localhost:3000
+تنبيه: البريد غير مهيأ — شغّل setup-email.bat وأدخل كلمة مرور تطبيق Gmail.
+Email send failed: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-49fcd07bc34sm49682325e9.10 - gsmtp
+    at SMTPConnection._formatError (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at SMTPConnection._onSocketData (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-49fcd07bc34sm49682325e9.10 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+Email send failed: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-49fcd074336sm49367525e9.8 - gsmtp
+    at SMTPConnection._formatError (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at SMTPConnection._onSocketData (C:\Users\ahmed\Projects\mutamayiz-homework\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-49fcd074336sm49367525e9.8 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}

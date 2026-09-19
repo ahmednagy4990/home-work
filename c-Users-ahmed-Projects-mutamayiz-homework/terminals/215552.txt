@@ -1,0 +1,14 @@
+---
+pid: 17748
+cwd: "C:\\Users\\ahmed\\Projects\\mutamayiz-homework"
+command: "$env:Path = [System.Environment]::GetEnvironmentVariable(\"Path\",\"Machine\") + \";\" + [System.Environment]::GetEnvironmentVariable(\"Path\",\"User\"); cd \"C:\\Users\\ahmed\\Projects\\mutamayiz-homework\"; node server.js"
+started_at: 2026-09-19T06:51:18.447Z
+running_for_ms: 801266   
+---
+المنصة تعمل على http://localhost:3000
+
+---
+exit_code: 4294967295
+elapsed_ms: 801468
+ended_at: 2026-09-19T07:04:39.915Z
+---

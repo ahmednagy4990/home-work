@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="منصة المتميز في الفلسفة وعلم النفس - رفع الواجبات الدراسية">
+  <title>المتميز في الفلسفة وعلم النفس | رفع الواجب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #142b3a;
+      --muted: #6b7e89;
+      --teal: #0d756f;
+      --teal-dark: #075b58;
+      --gold: #e8ae51;
+      --paper: #fbfaf7;
+      --line: #dce5e1;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "IBM Plex Sans Arabic", sans-serif;
+    }
+    .page { min-height: 100vh; overflow: hidden; position: relative; }
+    .page::before {
+      content: ""; position: absolute; inset: 0 0 auto; height: 460px; z-index: -1;
+      background: linear-gradient(135deg, #f0f6ef 0%, #f9f5e9 53%, #eef4f1 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 76%, 78% 87%, 48% 78%, 20% 92%, 0 82%);
+    }
+    header { max-width: 1180px; margin: auto; padding: 28px 30px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .mark { width: 46px; height: 46px; display: grid; place-items: center; background: var(--teal); color: white; border-radius: 15px 5px 15px 5px; font-family: Almarai, sans-serif; font-weight: 800; font-size: 24px; }
+    .brand strong { display: block; font-family: Almarai, sans-serif; font-size: 15px; }
+    .brand span { color: var(--muted); display: block; font-size: 11px; margin-top: 3px; }
+    .secure { display: flex; align-items: center; gap: 7px; color: var(--teal-dark); font-size: 12px; font-weight: 600; }
+    .secure i { width: 8px; height: 8px; border-radius: 50%; background: #41a56c; box-shadow: 0 0 0 4px #d8eee0; }
+    main { max-width: 1180px; margin: 54px auto 0; padding: 0 30px 70px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 78px; align-items: center; }
+    .intro { padding-top: 2px; }
+    .eyebrow { color: var(--teal); font-weight: 700; font-size: 13px; letter-spacing: .3px; margin: 0 0 18px; }
+    h1 { font-family: Almarai, sans-serif; font-size: clamp(31px, 4vw, 55px); line-height: 1.32; letter-spacing: 0; margin: 0 0 20px; max-width: 620px; }
+    h1 em { font-style: normal; color: var(--teal); position: relative; white-space: nowrap; }
+    h1 em::after { content: ""; position: absolute; right: 0; bottom: -6px; width: 84%; height: 7px; background: #f1c978; opacity: .65; z-index: -1; transform: rotate(-2deg); }
+    .lead { color: var(--muted); max-width: 500px; font-size: 17px; line-height: 1.9; margin: 0 0 30px; }
+    .notes { display: flex; gap: 22px; flex-wrap: wrap; }
+    .note { color: var(--muted); font-size: 12px; display: flex; align-items: center; gap: 7px; }
+    .note b { color: var(--teal); font-size: 17px; }
+    .portrait { min-height: 330px; position: relative; display: flex; align-items: end; justify-content: center; }
+    .portrait::before { content: ""; position: absolute; width: 320px; height: 320px; border-radius: 50%; background: #dcece3; top: 15px; right: 50%; transform: translateX(50%); }
+    .portrait::after { content: ""; position: absolute; width: 78px; height: 78px; border: 12px solid var(--gold); border-left-color: transparent; border-radius: 50%; top: 13px; left: 7%; }
+    .portrait img { position: relative; z-index: 1; width: min(100%, 405px); height: 440px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 20px 24px rgba(20,43,58,.14)); }
+    .form-card { background: rgba(255,255,255,.92); border: 1px solid rgba(220,229,225,.95); box-shadow: 0 20px 55px rgba(21,51,54,.1); padding: 34px; border-radius: 5px 24px 5px 24px; max-width: 520px; justify-self: end; }
+    .form-card h2 { font-family: Almarai, sans-serif; font-size: 23px; margin: 0 0 7px; }
+    .form-card .sub { color: var(--muted); font-size: 13px; margin: 0 0 25px; }
+    label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    input[type="text"] { width: 100%; height: 50px; padding: 0 16px; border: 1px solid var(--line); border-radius: 9px; color: var(--ink); background: #fff; font: inherit; outline: none; transition: border .2s, box-shadow .2s; }
+    input[type="text"]:focus { border-color: var(--teal); box-shadow: 0 0 0 4px rgba(13,117,111,.1); }
+    .field { margin-bottom: 20px; }
+    .dropzone { border: 1.5px dashed #a9c2b9; border-radius: 12px; min-height: 146px; padding: 20px; display: grid; place-items: center; text-align: center; cursor: pointer; background: #f8fcf9; transition: background .2s, border-color .2s; }
+    .dropzone:hover, .dropzone.dragging { border-color: var(--teal); background: #eef8f3; }
+    .upload-icon { width: 39px; height: 39px; display: grid; place-items: center; margin: 0 auto 8px; border-radius: 50%; background: #dcefe7; color: var(--teal); font-size: 20px; }
+    .dropzone strong { display: block; font-size: 13px; }
+    .dropzone small { color: var(--muted); font-size: 11px; }
+    #file { display: none; }
+    .file-name { display: block; color: var(--teal-dark); font-size: 12px; margin-top: 9px; min-height: 17px; }
+    .submit { border: 0; width: 100%; height: 53px; border-radius: 9px; color: #fff; background: var(--teal); font: 700 15px Almarai, sans-serif; cursor: pointer; transition: transform .2s, background .2s; }
+    .submit:hover { background: var(--teal-dark); transform: translateY(-2px); }
+    .submit:disabled { opacity: .65; cursor: wait; transform: none; }
+    .status { margin: 14px 0 0; min-height: 20px; text-align: center; font-size: 12px; font-weight: 600; }
+    .status.error { color: #b34646; }
+    .status.success { color: #258153; }
+    footer { text-align: center; color: #82928f; font-size: 11px; padding: 0 20px 24px; }
+    @media (max-width: 850px) { header { padding: 22px 20px; } main { margin-top: 30px; padding: 0 20px 45px; grid-template-columns: 1fr; gap: 10px; } .intro { text-align: center; } .lead { margin-left: auto; margin-right: auto; } .notes { justify-content: center; } .portrait { order: -1; min-height: 260px; margin-bottom: -10px; } .portrait::before { width: 245px; height: 245px; top: 5px; } .portrait img { height: 315px; width: 300px; } .portrait::after { width: 58px; height: 58px; border-width: 9px; left: 13%; } .form-card { justify-self: stretch; max-width: none; padding: 27px 21px; } }
+    @media (max-width: 430px) { .secure { display: none; } h1 { font-size: 30px; } .lead { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand"><div class="mark">م</div><div><strong>المتميز في الفلسفة وعلم النفس</strong><span>الأستاذ أحمد ناجي</span></div></div>
+      <div class="secure"><i></i> إرسال آمن للواجبات</div>
+    </header>
+    <main>
+      <section class="intro">
+        <p class="eyebrow">بوابة تسليم الواجبات الدراسية</p>
+        <h1>خطوة صغيرة نحو <em>التميز</em> الدراسي</h1>
+        <p class="lead">ارفع صورة واجبك بسهولة، وسنحرص على وصولها للأستاذ أحمد ناجي للمراجعة والمتابعة.</p>
+        <div class="notes"><span class="note"><b>✓</b> اكتب اسمك بالكامل</span><span class="note"><b>✓</b> صورة واضحة للواجب</span></div>
+      </section>
+      <section class="portrait" aria-label="الأستاذ أحمد ناجي"><img src="teacher.png" alt="الأستاذ أحمد ناجي"></section>
+      <section class="form-card">
+        <h2>تسليم الواجب</h2>
+        <p class="sub">أدخل بياناتك ثم اختر صورة الواجب من جهازك.</p>
+        <form action="https://formsubmit.co/ahmednagy4990@gmail.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="واجب جديد من منصة المتميز">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="field"><label for="student-name">اسم الطالب بالكامل</label><input id="student-name" name="اسم الطالب" type="text" placeholder="مثال: أحمد محمد علي" required minlength="3"></div>
+          <div class="field"><label for="file">صورة الواجب</label><label class="dropzone" id="dropzone" for="file"><span><span class="upload-icon">↑</span><strong>اضغط لاختيار الصورة</strong><small>أو اسحبها إلى هنا · JPG أو PNG · حتى 10 ميجابايت</small></span></label><input id="file" name="attachment" type="file" accept="image/jpeg,image/png,image/webp" required><span class="file-name" id="file-name"></span></div>
+          <button class="submit" type="submit" id="submit-button">إرسال الواجب</button>
+          <p class="status" id="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <footer>منصة المتميز في الفلسفة وعلم النفس · معًا نحو فهم أعمق وتفكير أفضل</footer>
+  </div>
+  <script>
+    const fileInput = document.getElementById('file');
+    const dropzone = document.getElementById('dropzone');
+    const fileName = document.getElementById('file-name');
+    const status = document.getElementById('status');
+    const form = document.querySelector('form');
+    const submitButton = document.getElementById('submit-button');
+    const maxSize = 10 * 1024 * 1024;
+
+    function showFile(file) {
+      status.textContent = '';
+      status.className = 'status';
+      if (!file) return;
+      if (!file.type.startsWith('image/') || file.size > maxSize) {
+        fileInput.value = '';
+        fileName.textContent = '';
+        status.textContent = 'يرجى اختيار صورة بحجم لا يتجاوز 10 ميجابايت.';
+        status.className = 'status error';
+        return;
+      }
+      fileName.textContent = `تم اختيار: ${file.name}`;
+    }
+
+    fileInput.addEventListener('change', () => showFile(fileInput.files[0]));
+    ['dragenter', 'dragover'].forEach(eventName => dropzone.addEventListener(eventName, event => { event.preventDefault(); dropzone.classList.add('dragging'); }));
+    ['dragleave', 'drop'].forEach(eventName => dropzone.addEventListener(eventName, event => { event.preventDefault(); dropzone.classList.remove('dragging'); }));
+    dropzone.addEventListener('drop', event => { fileInput.files = event.dataTransfer.files; showFile(fileInput.files[0]); });
+    form.addEventListener('submit', event => {
+      if (!fileInput.files.length) { event.preventDefault(); status.textContent = 'اختر صورة الواجب أولًا.'; status.className = 'status error'; return; }
+      submitButton.disabled = true;
+      submitButton.textContent = 'جارٍ إرسال الواجب...';
+    });
+  </script>
+</body>
+</html>
